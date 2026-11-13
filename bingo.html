@@ -29,6 +29,9 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
 <style>html{scroll-behavior:smooth}@media (max-width:640px){h1{font-size:56px!important}}.sq{font:inherit;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:17px;line-height:1.15;color:#2A1A12;background:#FBF8F1;border:1px solid #C9B9A4;aspect-ratio:1/1;padding:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;transition:background .15s}
 .sq[aria-pressed="true"]{background:#7A1F2B;color:#F7F1E6;border-color:#5E1520}
 .sq.moment{font-style:italic}
+.s5 .sq{font-size:14px;padding:4px}
+.sq.free{background:#1F3A2C;color:#F2EADC;cursor:default}
+@media (max-width:480px){.s5 .sq{font-size:11px}}
 .sq:focus-visible{outline:2px solid #1F3A2C;outline-offset:2px}
 .win .sq.line{box-shadow:inset 0 0 0 3px #1F3A2C}
 @media (max-width:480px){.sq{font-size:14px}}
@@ -63,20 +66,22 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
       <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
         <p style="margin: 0; font-size: 13px; letter-spacing: 3.5px; text-transform: uppercase; color: #CDB9A3">For Yacht Club Lunch Bunch members</p>
         <h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 72px; line-height: 1">Lunch Card<br><span style="font-style: italic; color: #E7C9C0">Bingo</span></h1>
-        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: #E3D6C4">One hour, one card. Your card is dealt fresh each show day from the artists and moments of today&#39;s Yacht Club Lunch (or Sunday&#39;s Yacht Club Brunch), with a few who won&#39;t turn up at all.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: #E3D6C4">One hour, one card. A live game, played only while the show is on. Your card is dealt from the artists and moments of today&#39;s show, with a few who won&#39;t turn up at all.</p>
         <ol style="margin: 0; padding-left: 22px; font-size: 16px; line-height: 1.8; color: #E3D6C4">
-          <li>Deal your card below.</li>
-          <li>Listen along and tap each square as you hear it.</li>
-          <li>Four in a row, across, down or corner to corner, and you may call Bingo.</li>
+          <li>Cards are dealt 15 minutes before the show.</li>
+          <li>Listen live and tap each square as you hear it.</li>
+          <li><strong>Yacht Club Lunch</strong> (weekdays, noon ET): a 4×4 card, four in a row wins.</li>
+          <li><strong>Yacht Club Brunch</strong> (Sundays, 10 to 2 ET): a 5×5 card with a free anchor in the middle. Five in a row wins, and so do the four corners.</li>
+          <li>Call Bingo while the show is on, or up to 15 minutes after it ends.</li>
         </ol>
-        <p style="margin: 0; font-size: 15px; line-height: 1.75; font-style: italic; color: #CDB9A3">The first card that checks out against the day&#39;s log wins the Yacht Club Lunch Bunch swallowtail burgee. Winners are named on the air. Free to play; members only; one card per member per day.</p>
+        <p style="margin: 0; font-size: 15px; line-height: 1.75; font-style: italic; color: #CDB9A3">The first call that checks out against the show&#39;s log wins the Yacht Club Lunch Bunch swallowtail burgee. Winners are named on the air. Free to play; members only; one card per member per day.</p>
         <img src="/assets/burgee-yclb-swallowtail.svg" alt="The Yacht Club Lunch Bunch swallowtail burgee, today&#39;s prize" width="200" height="107">
       </div>
 
       <div style="flex: 1 1 460px; min-width: 0; background: #F7F1E6; color: #2A1A12; padding: 40px 36px; box-sizing: border-box; border: 1px solid #7A1F2B; outline: 1px solid #7A1F2B; outline-offset: -8px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 24px 50px rgba(0,0,0,0.35)">
         <div style="display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center">
           <p style="margin: 0; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #6B5A4B" id="cardDate">Today&#39;s card</p>
-          <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: italic; font-size: 36px; color: #7A1F2B">The Lunch Card</h2>
+          <h2 id="cardTitle" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: italic; font-size: 36px; color: #7A1F2B">The Lunch Card</h2>
         </div>
 
         <form id="deal" style="display: flex; flex-direction: column; gap: 16px">
@@ -89,9 +94,9 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
 
         <div id="cardWrap" hidden style="display: flex; flex-direction: column; gap: 14px">
           <p id="who" style="margin: 0; font-size: 14px; text-align: center; color: #4A3B2F"></p>
-          <div id="grid" role="group" aria-label="Your Lunch Card, 4 by 4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px"></div>
+          <div id="grid" role="group" aria-label="Your bingo card" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px"></div>
           <button type="button" id="callBtn" disabled style="font: inherit; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; background: #1F3A2C; color: #F7F1E6; border: 1px solid #163024; padding: 16px 24px; min-height: 52px; cursor: pointer; opacity: 0.45">Call Bingo!</button>
-          <p id="callMsg" role="status" style="margin: 0; font-size: 14px; font-style: italic; color: #5C4C3F; text-align: center">Four in a row lights up the button.</p>
+          <p id="callMsg" role="status" style="margin: 0; font-size: 14px; font-style: italic; color: #5C4C3F; text-align: center">A winning line lights up the button.</p>
           <button type="button" id="newCard" style="align-self: center; font: inherit; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; background: transparent; color: #7A1F2B; border: 0; text-decoration: underline; cursor: pointer; min-height: 44px">Not you? Deal for someone else</button>
         </div>
       </div>
@@ -125,64 +130,87 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
 <script>
 (function(){
   var store={get:function(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-  var today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  function etParts(){var p={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});return p}
+  var et=etParts(), today=et.year+'-'+et.month+'-'+et.day;
+  function nowHM(){var p=etParts();return p.hour+':'+p.minute}
+  function fmt(hm){var h=+hm.slice(0,2),m=hm.slice(3);return (h%12||12)+(m==='00'?'':':'+m)+(h<12?' a.m.':' p.m.')+' ET'}
   var pretty=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'long',month:'long',day:'numeric'}).format(new Date());
   var $=function(id){return document.getElementById(id)};
-  $('cardDate').textContent='Card for '+pretty;
-  var pool=null, state=null;
-  var LINES=[[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15],[0,4,8,12],[1,5,9,13],[2,6,10,14],[3,7,11,15],[0,5,10,15],[3,6,9,12]];
+  var pool=null,state=null,N=4,LINES=[],FREE=-1;
+  function buildLines(n){var L=[],i,j,r,c,d1=[],d2=[];for(i=0;i<n;i++){r=[];c=[];for(j=0;j<n;j++){r.push(i*n+j);c.push(j*n+i)}L.push(r);L.push(c);d1.push(i*n+i);d2.push(i*n+(n-1-i))}L.push(d1);L.push(d2);if(n===5)L.push([0,4,20,24]);return L}
   function hash(str){var h1=0xdeadbeef,h2=0x41c6ce57;for(var i=0;i<str.length;i++){var c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);return h1>>>0}
   function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
   function shuffle(a,r){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
   function deal(email){
     var r=rng(hash(email.trim().toLowerCase()+'|'+today));
-    var arts=shuffle(pool.artists,r), moms=shuffle(pool.moments,r);
-    var nA=Math.min(14,arts.length), picks=arts.slice(0,nA).map(function(a){return{t:a,m:false}});
-    picks=picks.concat(moms.slice(0,16-nA).map(function(a){return{t:a,m:true}}));
-    return shuffle(picks,r);
+    var cells=N*N-(N===5?1:0), nM=N===5?3:2;
+    var arts=shuffle(pool.artists,r).slice(0,cells-nM).map(function(a){return{t:a,m:false}});
+    var moms=shuffle(pool.moments,r).slice(0,cells-arts.length).map(function(a){return{t:a,m:true}});
+    var card=shuffle(arts.concat(moms),r);
+    if(N===5)card.splice(12,0,{t:'⚓',m:false,free:true});
+    return card;
   }
+  function phase(){var t=nowHM();if(t<pool.deal_from)return'early';if(t<pool.show_start)return'dealt';if(t<pool.show_end)return'live';if(t<pool.call_until)return'grace';return'closed'}
   function winLine(){for(var i=0;i<LINES.length;i++){if(LINES[i].every(function(k){return state.marked[k]}))return LINES[i]}return null}
   function render(){
-    var g=$('grid'); g.innerHTML='';
-    var line=winLine();
+    var g=$('grid');g.innerHTML='';g.style.gridTemplateColumns='repeat('+N+', minmax(0, 1fr))';
+    var line=winLine(),ph=phase();
     state.card.forEach(function(sq,i){
-      var b=document.createElement('button'); b.type='button'; b.className='sq'+(sq.m?' moment':'')+(line&&line.indexOf(i)>-1?' line':'');
-      b.textContent=sq.t; b.setAttribute('aria-pressed',state.marked[i]?'true':'false');
-      b.addEventListener('click',function(){if(state.called)return;state.marked[i]=!state.marked[i];save();render()});
+      var b=document.createElement('button');b.type='button';
+      b.className='sq'+(sq.m?' moment':'')+(sq.free?' free':'')+(line&&line.indexOf(i)>-1?' line':'');
+      b.textContent=sq.t;
+      if(sq.free){b.setAttribute('aria-label','Free square');b.setAttribute('aria-pressed','true');b.disabled=true}
+      else{b.setAttribute('aria-pressed',state.marked[i]?'true':'false');
+        b.addEventListener('click',function(){if(state.called||ph==='closed')return;state.marked[i]=!state.marked[i];save();render()})}
       g.appendChild(b);
     });
-    $('cardWrap').className=line?'win':'';
-    var c=$('callBtn');
-    if(state.called){c.disabled=true;c.style.opacity=0.45;c.textContent='Bingo called';$('callMsg').textContent='Called at '+state.called+'. The steward will check your card against today\u2019s log.'}
-    else if(line){c.disabled=false;c.style.opacity=1;c.textContent='Call Bingo!';$('callMsg').textContent='Four in a row! Call it before someone else does.'}
-    else{c.disabled=true;c.style.opacity=0.45;c.textContent='Call Bingo!';$('callMsg').textContent='Four in a row lights up the button.'}
+    $('cardWrap').className=(line?'win ':'')+(N===5?'s5':'');
+    var c=$('callBtn'),msg=$('callMsg'),open=(ph==='live'||ph==='grace');
+    function off(t){c.disabled=true;c.style.opacity=0.45;msg.textContent=t}
+    if(state.called){c.textContent='Bingo called';off('Called at '+state.called+'. The steward will check your card against the show’s log.')}
+    else if(ph==='closed'){c.textContent='Call Bingo!';off('Calls closed at '+fmt(pool.call_until)+'. See you at the next show.')}
+    else if(ph==='dealt'||ph==='early'){c.textContent='Call Bingo!';off('The show starts at '+fmt(pool.show_start)+'. Listen live and mark your card.')}
+    else if(line){c.disabled=false;c.style.opacity=1;c.textContent='Call Bingo!';msg.textContent=(ph==='grace'?'Show’s over, but calls stay open until '+fmt(pool.call_until)+'. ':'')+'You have a line! Call it before someone else does.'}
+    else{c.textContent='Call Bingo!';off(ph==='grace'?'Calls stay open until '+fmt(pool.call_until)+'.':'A winning line lights up the button.')}
   }
   function key(){return 'yclb-bingo-'+today}
   function save(){store.set(key(),state)}
   function show(){$('deal').hidden=true;$('cardWrap').hidden=false;$('who').textContent=state.name+', listening in '+state.city;render()}
+  function gate(){
+    var ph=phase(),btn=$('deal').querySelector('button');
+    if(ph==='early'){btn.disabled=true;$('dealMsg').textContent='Cards are dealt at '+fmt(pool.deal_from)+'. Come back then.'}
+    else if(ph==='closed'){btn.disabled=true;$('dealMsg').textContent='Today’s game is over. Cards are dealt 15 minutes before each show.'}
+    else{btn.disabled=false;$('dealMsg').textContent=''}
+  }
   fetch('/bingo/'+today+'.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(p){
-    pool=p; $('cardDate').textContent=(p.show||'Yacht Club Lunch')+' card for '+pretty; state=store.get(key()); if(state&&state.card)show();
+    pool=p;N=p.size||4;LINES=buildLines(N);
+    $('cardTitle').textContent=N===5?'The Brunch Card':'The Lunch Card';
+    $('cardDate').textContent=(p.show||'Yacht Club Lunch')+' · '+pretty;
+    state=store.get(key());
+    if(state&&state.card&&state.card.length===N*N)show();else{state=null;gate()}
+    setInterval(function(){if(state&&!$('cardWrap').hidden)render();else gate()},30000);
   }).catch(function(){
     $('deal').querySelector('button').disabled=true;
-    $('dealMsg').textContent='No Lunch Card today. Cards are dealt on Yacht Club Lunch days; check back then.';
+    $('dealMsg').textContent='No bingo today. Cards are dealt 15 minutes before Yacht Club Lunch (weekdays) and Yacht Club Brunch (Sundays).';
   });
   $('deal').addEventListener('submit',function(e){
-    e.preventDefault(); if(!pool)return;
-    state={name:$('pname').value.trim(),email:$('pemail').value.trim(),city:$('pcity').value.trim(),card:deal($('pemail').value),marked:new Array(16).fill(false),called:null};
-    save(); show();
+    e.preventDefault();if(!pool)return;var ph=phase();if(ph==='early'||ph==='closed'){gate();return}
+    var card=deal($('pemail').value),marked=card.map(function(s){return!!s.free});
+    state={name:$('pname').value.trim(),email:$('pemail').value.trim(),city:$('pcity').value.trim(),card:card,marked:marked,called:null};
+    save();show();
   });
-  $('newCard').addEventListener('click',function(){if(state&&state.called)return;state=null;try{localStorage.removeItem(key())}catch(e){};$('cardWrap').hidden=true;$('deal').hidden=false});
+  $('newCard').addEventListener('click',function(){if(state&&state.called)return;state=null;try{localStorage.removeItem(key())}catch(e){};$('cardWrap').hidden=true;$('deal').hidden=false;gate()});
   $('callBtn').addEventListener('click',function(){
-    var line=winLine(); if(!line||state.called)return;
+    var line=winLine(),ph=phase();if(!line||state.called||!(ph==='live'||ph==='grace'))return;
     var now=new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',second:'2-digit'})+' ET';
-    var data={'form-name':'yclb-bingo',name:state.name,email:state.email,city:state.city,date:today,
+    var data={'form-name':'yclb-bingo',name:state.name,email:state.email,city:state.city,date:today+' ('+pool.show+')',
       card:state.card.map(function(s){return s.t}).join(' | '),
-      marked:state.card.filter(function(s,i){return state.marked[i]}).map(function(s){return s.t}).join(' | '),
+      marked:state.card.filter(function(s,i){return state.marked[i]&&!s.free}).map(function(s){return s.t}).join(' | '),
       line:line.map(function(i){return state.card[i].t}).join(' | '),called_at:now};
-    $('callBtn').disabled=true; $('callMsg').textContent='Sending your card to the steward\u2026';
+    $('callBtn').disabled=true;$('callMsg').textContent='Sending your card to the steward…';
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
       .then(function(r){if(!r.ok)throw 0;state.called=now;save();render()})
-      .catch(function(){$('callBtn').disabled=false;$('callMsg').textContent='That didn\u2019t go through. Try once more.'});
+      .catch(function(){$('callBtn').disabled=false;$('callMsg').textContent='That didn’t go through. Try once more.'});
   });
 })();
 </script>
