@@ -1,10 +1,6 @@
 {
  "show": "Yacht Club Brunch",
  "size": 5,
- "deal_from": "09:45",
- "show_start": "10:00",
- "show_end": "14:00",
- "call_until": "14:15",
  "moments": [
   "The Birthday Beat",
   "A Deep Dive",
@@ -124,5 +120,12 @@
   "Toto",
   "Tyrone Davis",
   "Van Morrison"
+ ],
+ "airings": [
+  {
+   "label": "",
+   "start": "10:00",
+   "minutes": 240
+  }
  ]
 }

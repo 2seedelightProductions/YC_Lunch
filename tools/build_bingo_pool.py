@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build a bingo pool for Yacht Club Lunch (weekday H12, 4x4 card) or
 Yacht Club Brunch (Sunday H10-H13, 5x5 card) from the NextKast hour logs.
+Cards are valid 15 minutes before and after each airing (Lunch also re-airs at midnight).
 
 Usage:
   python3 build_bingo_pool.py --lib masterLibrary.txt --date 2026-11-13 Playlist/111326/12.pls > bingo/2026-11-13.json
@@ -24,14 +25,16 @@ DECOY_CATS = {"yachtrock", "yachtiest", "am gold", "retro", "yarandb", "smoothfm
 SHOWS = {
     "lunch": {
         "show": "Yacht Club Lunch", "size": 4,
-        "deal_from": "11:45", "show_start": "12:00", "show_end": "13:00", "call_until": "13:15",
+        # noon live, plus the midnight re-air of the same show (start 24:00 = midnight that night)
+        "airings": [{"label": "noon", "start": "12:00", "minutes": 60},
+                    {"label": "midnight re-air", "start": "24:00", "minutes": 60}],
         "moments": ["The Birthday Beat", "A Deep Dive", "Yacht Rock Rock Block",
                     "Capt. Hugh says “Studio Sea”", "702-YR-YACHT",
                     "A YCLB birthday shout-out", "Capt. Hugh’s Final Thought"],
     },
     "brunch": {
         "show": "Yacht Club Brunch", "size": 5,
-        "deal_from": "09:45", "show_start": "10:00", "show_end": "14:00", "call_until": "14:15",
+        "airings": [{"label": "", "start": "10:00", "minutes": 240}],
         "moments": ["The Birthday Beat", "A Deep Dive", "Yacht Rock Rock Block",
                     "Capt. Hugh says “Studio Sea”", "Capt. Hugh’s Final Thought"],
     },
