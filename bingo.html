@@ -108,6 +108,10 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
   <form name="yclb-bingo" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input name="name"><input name="email"><input name="city"><input name="date"><input name="card"><input name="marked"><input name="line"><input name="called_at"><input name="bot-field">
   </form>
+  <!-- One entry per card dealt (no name or email), for audience metrics -->
+  <form name="yclb-bingo-deal" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input name="date"><input name="show"><input name="city"><input name="player"><input name="dealt_at"><input name="bot-field">
+  </form>
 
   <!-- Footer -->
   <footer style="background: #1C110B; color: #B9A58F">
@@ -188,6 +192,13 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
     else if(ph==='closed'){btn.disabled=true;$('dealMsg').textContent='No game right now. Bingo cards are valid 15 minutes before and after each program.'}
     else{btn.disabled=false;$('dealMsg').textContent=''}
   }
+  // Anonymous per-browser id so dealt cards can be counted as unique players
+  function playerId(){var k='yclb-player',id=null;try{id=localStorage.getItem(k)}catch(e){}if(!id){id=Date.now().toString(36)+Math.random().toString(36).slice(2,10);try{localStorage.setItem(k,id)}catch(e){}}return id}
+  function logDeal(city){
+    var now=new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',second:'2-digit'})+' ET';
+    var data={'form-name':'yclb-bingo-deal',date:showDate,show:airName(),city:city,player:playerId(),dealt_at:now};
+    try{fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString(),keepalive:true}).catch(function(){})}catch(e){}
+  }
   function load(date){return fetch('/bingo/'+date+'.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()})}
   function setup(p,date){
     pool=p;showDate=date;N=p.size||4;LINES=buildLines(N);
@@ -214,7 +225,7 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
     e.preventDefault();if(!pool)return;var ph=phase();if(ph==='early'||ph==='closed'){gate();return}
     var card=deal($('pemail').value),marked=card.map(function(s){return!!s.free});
     state={name:$('pname').value.trim(),email:$('pemail').value.trim(),city:$('pcity').value.trim(),card:card,marked:marked,called:null};
-    save();show();
+    save();show();logDeal(state.city);
   });
   $('newCard').addEventListener('click',function(){if(state&&state.called)return;state=null;try{localStorage.removeItem(key())}catch(e){};$('cardWrap').hidden=true;$('deal').hidden=false;gate()});
   $('callBtn').addEventListener('click',function(){
