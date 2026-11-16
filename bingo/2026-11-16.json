@@ -1,6 +1,18 @@
 {
  "show": "Yacht Club Lunch",
  "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
  "moments": [
   "The Birthday Beat",
   "A Deep Dive",
@@ -14,41 +26,29 @@
  "artists": [
   "Al Stewart",
   "Ambrosia",
+  "Aretha Franklin",
   "Barry Manilow",
-  "Bay City Rollers",
-  "Crystal Gayle",
+  "Chi-Lites",
+  "Crosby, Stills & Nash",
+  "Diana Krall",
+  "Don Henley",
   "Dr. John",
-  "Elvis Presley",
+  "Eagles",
   "Eric Clapton",
-  "Gladys Knight & The Pips",
-  "Glenn Frey",
+  "Four Tops",
+  "George Harrison",
   "Hall & Oates",
-  "Isley Brothers",
+  "James Brown",
+  "Judy Collins",
   "Kenny Loggins f Steve Perry",
-  "Linda Ronstadt",
-  "Lisa Stansfield",
-  "Little River Band",
+  "Kool & The Gang",
+  "Leo Sayer",
+  "Lionel Richie",
   "Michael McDonald",
   "Nitty Gritty Dirt Band",
   "Orleans",
   "Richard & Linda Thompson",
-  "Rick Springfield",
-  "Stevie Nicks",
-  "Stylistics",
-  "Three Dog Night",
   "Tony Orlando & Dawn",
   "Toto"
- ],
- "airings": [
-  {
-   "label": "noon",
-   "start": "12:00",
-   "minutes": 60
-  },
-  {
-   "label": "midnight re-air",
-   "start": "24:00",
-   "minutes": 60
-  }
  ]
 }
