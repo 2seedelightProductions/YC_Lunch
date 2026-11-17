@@ -1,44 +1,6 @@
 {
  "show": "Yacht Club Lunch",
  "size": 4,
- "moments": [
-  "The Birthday Beat",
-  "A Deep Dive",
-  "Yacht Rock Rock Block",
-  "Capt. Hugh says “Studio Sea”",
-  "702-YR-YACHT",
-  "A YCLB birthday shout-out",
-  "Capt. Hugh’s Final Thought"
- ],
- "date": "2026-11-17",
- "artists": [
-  "10cc",
-  "5th Dimension",
-  "Alice Cooper",
-  "America",
-  "Babys",
-  "Billy Ocean",
-  "Chi Lites",
-  "Chicago",
-  "Don Felder",
-  "Don Henley",
-  "Doobie Brothers",
-  "Eagles",
-  "Emotions",
-  "Hall & Oates",
-  "Hues Corporation",
-  "Jackson 5",
-  "James Taylor",
-  "KC & The Sunshine Band",
-  "Maxine Nightingale",
-  "Michael McDonald",
-  "Poco",
-  "Randy Crawford",
-  "Steely Dan",
-  "Stevie Nicks",
-  "Thundercat",
-  "TOTO"
- ],
  "airings": [
   {
    "label": "noon",
@@ -50,5 +12,43 @@
    "start": "24:00",
    "minutes": 60
   }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-17",
+ "artists": [
+  "5th Dimension",
+  "Alice Cooper",
+  "Babys",
+  "Bachman Turner Overdrive",
+  "Boz Scaggs",
+  "Bread",
+  "Carole King",
+  "Chi-Lites",
+  "Chris Rea",
+  "David Soul",
+  "Don Felder",
+  "Dr. Hook",
+  "Dramatics",
+  "Foreigner",
+  "Four Seasons",
+  "Jackson 5",
+  "James Taylor",
+  "John Lennon",
+  "Linda Ronstadt",
+  "Michael McDonald",
+  "Neil Young",
+  "Nilsson",
+  "Player",
+  "Tina Turner",
+  "Todd Rundgren",
+  "Van Morrison"
  ]
 }
