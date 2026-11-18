@@ -1,0 +1,54 @@
+{
+ "show": "Yacht Club Lunch",
+ "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-18",
+ "artists": [
+  "10cc",
+  "Ambrosia",
+  "Atlanta Rhythm Section",
+  "Bob Welch",
+  "Carly Simon",
+  "Christopher Cross",
+  "Dan Fogelberg",
+  "Diana Ross",
+  "Eagles",
+  "Elton John",
+  "Elvis Presley",
+  "England Dan & John Ford Coley",
+  "Gladys Knight and the Pips",
+  "Hall & Oates",
+  "J.D. Souther",
+  "James Taylor",
+  "Kenny Rogers",
+  "Manhattans",
+  "Natalie Cole",
+  "Orleans",
+  "Poco",
+  "Queen",
+  "Rick Springfield",
+  "Seals & Crofts",
+  "Tavares",
+  "Thelma Houston"
+ ]
+}
