@@ -1,0 +1,56 @@
+{
+ "show": "Yacht Club Lunch",
+ "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-19",
+ "artists": [
+  "Albert Hammond",
+  "Anne Murray",
+  "Beach Boys",
+  "Blood, Sweat & Tears",
+  "Bob Seger & The Silver Bullet Band",
+  "breakNote",
+  "Bruce Cockburn",
+  "Chris Rea",
+  "Christine McVie",
+  "Christopher Cross",
+  "Elton John",
+  "England Dan & John Ford Coley",
+  "Gary Wright",
+  "John Hall",
+  "John Stewart",
+  "Joni Mitchell",
+  "Lobo",
+  "Loggins & Messina",
+  "Maxine Nightingale",
+  "Nick Heyward",
+  "Olivia Newton John",
+  "Pilot",
+  "Spinners",
+  "Steve Winwood",
+  "Stevie Nicks",
+  "Tavares",
+  "The Eagles",
+  "Walter Egan"
+ ]
+}
