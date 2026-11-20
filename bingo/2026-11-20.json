@@ -1,0 +1,54 @@
+{
+ "show": "Yacht Club Lunch",
+ "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-20",
+ "artists": [
+  "10cc",
+  "ABBA",
+  "Ace",
+  "Beach Boys",
+  "Benny Mardones",
+  "Bob Welch",
+  "Bruce Blackman",
+  "Crosby, Stills & Nash",
+  "Diana Ross",
+  "Eric Clapton",
+  "Foreigner",
+  "Gerry Rafferty",
+  "Gino Vannelli",
+  "Jacksons",
+  "Joe Walsh",
+  "Judy Collins",
+  "Kenny Loggins",
+  "Little River Band",
+  "Looking Glass",
+  "Michael Bolton",
+  "Nicolette Larson",
+  "Pablo Cruise",
+  "Patti Austin",
+  "Paul Simon",
+  "Tony Orlando & Dawn",
+  "Van Morrison"
+ ]
+}
