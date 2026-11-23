@@ -1,0 +1,54 @@
+{
+ "show": "Yacht Club Lunch",
+ "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-23",
+ "artists": [
+  "ABBA",
+  "America",
+  "Barry Manilow",
+  "Barry White",
+  "Boz Scaggs",
+  "Bruce Hornsby & The Range",
+  "Chi-Lites",
+  "Christopher Cross",
+  "Crosby, Stills & Nash",
+  "Dan Fogelberg",
+  "Dave Loggins",
+  "Donald Fagen",
+  "Electric Light Orchestra",
+  "Firefall",
+  "Fleetwood Mac",
+  "Jermaine Jackson",
+  "Kenny Rogers",
+  "Marvin Gaye",
+  "Peter Cetera w/ Amy Grant",
+  "Reuben Howell",
+  "Rolling Stones",
+  "Rupert Holmes",
+  "Spinners",
+  "Stylistics",
+  "Supremes",
+  "The Eagles"
+ ]
+}
