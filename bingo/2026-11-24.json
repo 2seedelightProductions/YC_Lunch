@@ -1,0 +1,54 @@
+{
+ "show": "Yacht Club Lunch",
+ "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-24",
+ "artists": [
+  "Al Jarreau",
+  "Alan Parsons",
+  "Badfinger",
+  "Barry Manilow",
+  "Boz Scaggs",
+  "Bread",
+  "Bruce Cockburn",
+  "Cat Stevens",
+  "Chi-Lites",
+  "Eddie Rabbitt",
+  "Elton John",
+  "Eric Carmen",
+  "Four Tops",
+  "Gerry Rafferty",
+  "Gino Vannelli",
+  "Jim Croce",
+  "Joey Scarbury",
+  "John Lennon",
+  "Kim Carnes",
+  "Lee Michaels",
+  "Loggins & Messina",
+  "Nilsson",
+  "Pointer Sisters",
+  "Pure Prairie League",
+  "Sugarloaf",
+  "Three Dog Night"
+ ]
+}
