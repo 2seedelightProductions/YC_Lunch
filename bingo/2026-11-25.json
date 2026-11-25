@@ -1,0 +1,54 @@
+{
+ "show": "Yacht Club Lunch",
+ "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-25",
+ "artists": [
+  "Al Stewart",
+  "Alice Cooper",
+  "Anne Murray",
+  "Bachman Turner Overdrive",
+  "Billy Preston",
+  "Bob Lind",
+  "Bob Seger & The Silver Bullet Band",
+  "Cat Stevens",
+  "Charlie Rich",
+  "Elton John",
+  "Foreigner",
+  "Honey Cone",
+  "Joey Scarbury",
+  "KC & The Sunshine Band",
+  "Kenny Loggins",
+  "Lionel Richie",
+  "Michael Jackson",
+  "Michael Johnson",
+  "Michael McDonald",
+  "Moody Blues",
+  "Natalie Cole",
+  "Osmonds",
+  "Paul Davis",
+  "Ronnie Milsap",
+  "Sweet",
+  "Tyrone Davis"
+ ]
+}
