@@ -106,7 +106,7 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
 
   <!-- Netlify reads this hidden copy to register the bingo form -->
   <form name="yclb-bingo" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input name="name"><input name="email"><input name="city"><input name="date"><input name="card"><input name="marked"><input name="line"><input name="called_at"><input name="bot-field">
+    <input name="name"><input name="email"><input name="city"><input name="date"><input name="card"><input name="marked"><input name="line"><input name="called_at"><input type="hidden" name="subject"><input name="record_shoutout"><input name="bot-field">
   </form>
   <!-- One entry per card dealt (no name or email), for audience metrics -->
   <form name="yclb-bingo-deal" data-netlify="true" netlify-honeypot="bot-field" hidden>
@@ -235,6 +235,9 @@ a{color:#7A1F2B}a:hover{color:#4E1119}
       card:state.card.map(function(s){return s.t}).join(' | '),
       marked:state.card.filter(function(s,i){return state.marked[i]&&!s.free}).map(function(s){return s.t}).join(' | '),
       line:line.map(function(i){return state.card[i].t}).join(' | '),called_at:now};
+    // the alert email's subject shows the winner at a glance; the link opens a prefilled Free Break in the VT app
+    data.subject='\uD83C\uDF89 BINGO \u2014 '+state.name+', '+state.city+' ('+airName()+', '+now+')';
+    data.record_shoutout='https://yrrvt.netlify.app/?free='+encodeURIComponent('Bingo '+state.name+' '+state.city);
     $('callBtn').disabled=true;$('callMsg').textContent='Sending your card to the steward…';
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
       .then(function(r){if(!r.ok)throw 0;state.called=now;save();render()})
