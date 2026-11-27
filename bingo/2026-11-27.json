@@ -1,0 +1,54 @@
+{
+ "show": "Yacht Club Lunch",
+ "size": 4,
+ "airings": [
+  {
+   "label": "noon",
+   "start": "12:00",
+   "minutes": 60
+  },
+  {
+   "label": "midnight re-air",
+   "start": "24:00",
+   "minutes": 60
+  }
+ ],
+ "moments": [
+  "The Birthday Beat",
+  "A Deep Dive",
+  "Yacht Rock Rock Block",
+  "Capt. Hugh says “Studio Sea”",
+  "702-YR-YACHT",
+  "A YCLB birthday shout-out",
+  "Capt. Hugh’s Final Thought"
+ ],
+ "date": "2026-11-27",
+ "artists": [
+  "10cc",
+  "Alan O'Day",
+  "Anne Murray",
+  "Association",
+  "Atlanta Rhythm Section",
+  "Bachman Turner Overdrive",
+  "Bob Seger & The Silver Bullet Band",
+  "Boz Scaggs",
+  "Brecker Brothers",
+  "Electric Light Orchestra",
+  "Fleetwood Mac",
+  "Gary Wright",
+  "George Harrison",
+  "Gladys Knight and the Pips",
+  "James Brown",
+  "KC & The Sunshine Band",
+  "Kenny Nolan",
+  "Kenny Rogers",
+  "Lee Ritenour",
+  "Natalie Cole",
+  "Olivia Newton-John",
+  "Robert John",
+  "Ronnie Milsap",
+  "Sanford & Townsend",
+  "Spinners",
+  "Tony Orlando & Dawn"
+ ]
+}
